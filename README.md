@@ -24,11 +24,20 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 
 Explain in detail the workings of a dynamic array:
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+
+	a static array will always have an runtime complexity of O(n) when adding or removing data because it needs relocate the resources or reposition the resources thus needing to iterate through the items of the array. Accessing, however, will have a runtime of O(1) becasue all the data is stored sequentially in memory and can therefor be eailiy located with a little math.
+
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
 
+	worst case scenario with a dynamic array is when you try to entend the storage size. Normally in a dynamic array, you will have extra space and wont need to resize which allows for insertion and deletion to potentially run at O(1). When you need to resize, you have to copy all the data to a new location with the new size which means the old data but be looped through and copied resulting in a O(n) runtime.
+
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
+
+	a blockchain is a suquence of storage containers that contains information specific to that blockchains use. Each block or storage container gets hashed in a way that points it to the next contatiner. This concept of one block idnitfying what the next block is created this chain concept. The Data is organized alphabetically to ensure the hash function will produce consistent results.
  
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+
+	Proof of work is a concept where you add a number to added to the last block in the chain to then be hashed to identify the next block. In order for a proof or the number to added to the block to be valid, the hashed value created from the block and proof must meet requirements imposed by those maintaining the blockchain. This means people must iterate through many numbers in order to find one that produces the desired results. This work of going through many numbers is the mining concept within blockchain. This means if a person or group of people can change a block and finds its proof pointing to the next block and then match that all the way to to the most recent block, they could in theory rewrite what would be considered the history of the blockchain. In practice, the number of people working on the current chain far exceeds the number of people trying to change the chain so on a practical level its impossible for an individual or a group smaller than 51% of the participating population to accomplish this rewriting.
 
 ## Project Set Up
 
